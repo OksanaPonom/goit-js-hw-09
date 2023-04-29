@@ -6,6 +6,11 @@ let intervalId = 0;
 btnSrart.addEventListener('click', onBtnStartClick);
 btnStop.addEventListener('click', onBtnStopClick);
 
+btnSrart.style.height = '50px';
+btnSrart.style.width = '70px';
+btnStop.style.height = '50px';
+btnStop.style.width = '70px';
+
 function onBtnStartClick() {
   if (intervalId !== 0) {
     return;
@@ -13,11 +18,15 @@ function onBtnStartClick() {
   intervalId = setInterval(() => {
     getBodyBackgroundColor();
   }, 1000);
+  btnSrart.setAttribute('disabled', '');
+  btnStop.removeAttribute('disabled');
 }
 
 function onBtnStopClick() {
   clearInterval(intervalId);
   intervalId = 0;
+  btnStop.setAttribute('disabled', '');
+  btnSrart.removeAttribute('disabled');
 }
 
 function getBodyBackgroundColor() {

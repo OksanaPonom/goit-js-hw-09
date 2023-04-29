@@ -51,6 +51,7 @@ function onTimerStart() {
     hoursOfTimer.textContent = `${convertMs(deltaTime).hours}`.padStart(2, '0');
     daysOfTimer.textContent = `${convertMs(deltaTime).days}`.padStart(2, '0');
   }, 1000);
+  btnStart.setAttribute('disabled', '');
 }
 
 function convertMs(ms) {
